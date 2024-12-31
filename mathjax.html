@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MathJax Summation Rendering</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f9;
+        }
+        .math-container {
+            font-size: 1.5rem;
+            color: #333;
+            margin-top: 20px;
+        }
+        .input-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        input {
+            padding: 10px;
+            font-size: 1rem;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="input-container">
+        <label for="math-input">Enter a Math Expression in Natural Language:</label>
+        <input type="text" id="math-input" placeholder="e.g., sum from i equals 1 to n of x sub i">
+    </div>
+    <div class="math-container" id="math-render"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const mathContainer = document.getElementById('math-render');
+            const mathInput = document.getElementById('math-input');
+
+            const naturalLanguageToMath = (input) => {
+                return input                    
+                    .replace(/sum/i, '\\sum')
+                    .replace(/squared/ig,'^2')
+                    .replace(/cubed/ig,'^3')
+                    .replace(/from/,'_{')
+                    .replace(/to/i, '}^{')
+                    .replace(/of/i, '} ')
+                    .replace(/equals/i, '=')
+                    .replace(/sub/i, '_')
+                    .replace(/(.+)*over*(.+)/i, '\\frac{$1}{$2}')
+                    .replace(/ /g, '');
+                    
+            };
+
+            mathInput.addEventListener('input', () => {
+                const mathExpression = naturalLanguageToMath(mathInput.value);
+                mathContainer.innerHTML = `\\(${mathExpression}\\)`;
+
+                // Trigger MathJax typesetting
+                MathJax.typesetPromise([mathContainer]).catch(err => console.error(err));
+            });
+        });
+    </script>
+</body>
