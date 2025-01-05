@@ -54,7 +54,10 @@
             const startSpeechButton = document.getElementById('start-speech');
 
             const naturalLanguageToMath = (input) => {
-                return input                    
+                return input
+                    .toLowerCase()
+                    .replace(/some/i,'\\sum') 
+                    .replace(/summation/i,'\\sum')                   
                     .replace(/sum/i, '\\sum')
                     .replace(/squared/ig,'^2')
                     .replace(/cubed/ig,'^3')
@@ -63,6 +66,7 @@
                     .replace(/of/i, '} ')
                     .replace(/equals/i, '=')
                     .replace(/sub/i, '_')
+                    .replace(/the/i, '')
                     .replace(/(.+)*over*(.+)/i, '\\frac{$1}{$2}')
                     .replace(/ /g, '');
             };
