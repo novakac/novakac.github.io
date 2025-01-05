@@ -55,7 +55,6 @@
 
             const naturalLanguageToMath = (input) => {
                 return input
-                    .toLowerCase()
                     .replace(/some/i,'\\sum') 
                     .replace(/summation/i,'\\sum')                   
                     .replace(/sum/i, '\\sum')
