@@ -56,18 +56,22 @@
             const naturalLanguageToMath = (input) => {
                 return input
                     .toLowerCase()
-                    .replace(/some/i,'\\sum') 
-                    .replace(/summation/i,'\\sum')                   
-                    .replace(/sum/i, '\\sum')
-                    .replace(/squared/ig,'^2')
-                    .replace(/cubed/ig,'^3')
+                    .replace(/integral/i, '\\int')
+                    .replace(/plus/,'+')
+                    .replace(/minus/,"-")
+                    .replace(/times/,'*')
+                    .replace(/some/,'sum') 
+                    .replace(/summation/,'sum')                   
+                    .replace(/sum/, '\\sum')
+                    .replace(/squared/g,'^2')
+                    .replace(/cubed/g,'^3')
                     .replace(/from/,'_{')
-                    .replace(/to/i, '}^{')
-                    .replace(/of/i, '} ')
-                    .replace(/equals/i, '=')
-                    .replace(/sub/i, '_')
-                    .replace(/the/i, '')
-                    .replace(/(.+)*over*(.+)/i, '\\frac{$1}{$2}')
+                    .replace(/to/, '}^{')
+                    .replace(/of/, '} ')
+                    .replace(/equals/, '=')
+                    .replace(/sub/, '_')
+                    .replace(/the/, '')
+                    .replace(/(.+)*over*(.+)/, '\\frac{$1}{$2}')
                     .replace(/ /g, '');
             };
 

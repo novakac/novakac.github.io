@@ -1,0 +1,22 @@
+[
+    {
+      "sentence": "ὁ ἀνὴρ βλέπει τὸν παῖδα.",
+      "words": [
+        { "text": "ὁ", "partOfSpeech": "article", "gender": "masculine", "declension": "2nd", "case": "nominative", "number": "singular" },
+        { "text": "ἀνὴρ", "partOfSpeech": "noun", "gender": "masculine", "declension": "3rd", "case": "nominative", "number": "singular" },
+        { "text": "βλέπει", "partOfSpeech": "verb", "voice": "active", "mood": "indicative", "tense": "present", "person": "3rd", "number": "singular" },
+        { "text": "τὸν", "partOfSpeech": "article", "gender": "masculine", "declension": "2nd", "case": "accusative", "number": "singular" },
+        { "text": "παῖδα", "partOfSpeech": "noun", "gender": "masculine", "declension": "1st", "case": "accusative", "number": "singular" }
+      ]
+    },
+    {
+      "sentence": "ἡ γυνὴ γράφει τὴν ἐπιστολήν.",
+      "words": [
+        { "text": "ἡ", "partOfSpeech": "article", "gender": "feminine", "declension": "1st", "case": "nominative", "number": "singular" },
+        { "text": "γυνὴ", "partOfSpeech": "noun", "gender": "feminine", "declension": "3rd", "case": "nominative", "number": "singular" },
+        { "text": "γράφει", "partOfSpeech": "verb", "voice": "active", "mood": "indicative", "tense": "present", "person": "3rd", "number": "singular" },
+        { "text": "τὴν", "partOfSpeech": "article", "gender": "feminine", "declension": "1st", "case": "accusative", "number": "singular" },
+        { "text": "ἐπιστολήν", "partOfSpeech": "noun", "gender": "feminine", "declension": "1st", "case": "accusative", "number": "singular" }
+      ]
+    }
+  ]

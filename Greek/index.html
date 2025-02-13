@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ancient Greek Part of Speech Quiz</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="level-selector">
+    <label for="level">Level:</label>
+    <select id="level">
+      <option value="1">Level 1</option>
+      <option value="2">Level 2</option>
+      <option value="3">Level 3</option>
+    </select>
+  </div>
+  <h1>Ancient Greek Part of Speech Quiz</h1>
+  <div class="sentence" id="sentence"></div>
+  <div class="dropdown-container" id="dropdown-container"></div>
+  <div class="feedback" id="feedback"></div>
+  <button id="next-sentence" style="display: none;">Next Sentence</button>
+
+  <!-- Include all JavaScript files -->
+  <script src="utils.js"></script>
+  <script src="level1.js"></script>
+  <script src="level2.js"></script>
+  <script src="level3.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
